@@ -229,6 +229,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .lover-image {
@@ -238,7 +239,7 @@ body {
   text-align: center;
 }
 
-.lover-image img {
+.lover-image>img:first-child {
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -246,9 +247,11 @@ body {
 
 .trusted-badge {
   position: absolute;
-  top: -80px;
-  left: 400px;
-  width: 200px !important;
+  top: -60px;
+  right: -60px;
+  width: 150px !important;
+  height: auto;
+  z-index: 2;
 }
 
 .lover-text {
@@ -260,6 +263,11 @@ body {
 .lover-text h2 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: #333;
+}
+
+.lover-text .orange {
+  color: #ff6b35;
 }
 
 .lover-text ul {
@@ -268,354 +276,28 @@ body {
 }
 
 .lover-text li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #444;
   font-size: 15px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .lover-container {
-    flex-direction: column;
-    text-align: left;
-  }
-
-  .lover-text {
-    padding: 20px 0 0;
-  }
-
-  .trusted-badge {
-    display: none;
-  }
-}
-
-/* Latest Deal Section */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.header h1 .latest {
-  color: #ff6b35;
-  font-weight: normal;
-}
-
-.header h1 .deals {
-  color: #333;
-  font-weight: bold;
-}
-
-.header p {
-  color: #666;
-  font-size: 1rem;
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-.deals-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 20px;
-  height: 500px;
-}
-
-.deal-card {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.deal-card:hover {
-  transform: translateY(-5px);
-}
-
-.deal-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-
-.discount {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.plant-name {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.shop-btn {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  padding: 8px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  text-decoration: underline;
-  transition: all 0.3s ease;
-}
-
-.shop-btn:hover {
-  background-color: white;
-  color: #333;
-}
-
-.bloom-plant {
-  grid-row: 1;
-  grid-column: 1;
-}
-
-.ana-plant {
-  grid-row: 2;
-  grid-column: 1;
-}
-
-.zabo-plant {
-  grid-row: 1 / 3;
-  grid-column: 2;
-}
-
-.zabo-plant .discount {
-  font-size: 3rem;
-}
-
-.zabo-plant .plant-name {
-  font-size: 3rem;
+/* Responsive for Plants Lover Section */
+@media (max-width: 1024px) {
+  .trusted-badge {
+    top: -40px;
+    right: -40px;
+    width: 120px !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .deals-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    height: auto;
-  }
-
-  .deal-card {
-    height: 250px;
-  }
-
-  .bloom-plant,
-  .ana-plant,
-  .zabo-plant {
-    grid-row: auto;
-    grid-column: 1;
-  }
-
-  .header h1 {
-    font-size: 2rem;
-  }
-
-  .discount {
-    font-size: 1.5rem;
-  }
-
-  .plant-name {
-    font-size: 1.5rem;
-  }
-
-  .zabo-plant .discount,
-  .zabo-plant .plant-name {
-    font-size: 2rem;
-  }
+  .plants-lover {
+      padding: 40px 20px;
+    }
+  
+    .trusted-badge {
+      display: none;
+    }
 }
 
-/* Join Section */
-.join-section {
-  background: url("assets/news-letter-bg.png") center/cover no-repeat;
-  padding: 80px 20px;
-  color: white;
-  text-align: center;
-  position: relative;
-}
-
-.join-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Optional dark overlay */
-  max-width: 600px;
-  margin: auto;
-  padding: 40px 20px;
-  border-radius: 8px;
-}
-
-.join-overlay h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-.join-overlay .orange {
-  color: #f26522;
-}
-
-.join-form {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.join-form input[type="email"] {
-  padding: 10px 15px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  flex: 1 1 250px;
-  max-width: 300px;
-}
-
-.join-form button {
-  padding: 10px 20px;
-  background-color: #f26522;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.join-form button:hover {
-  background-color: #d4521d;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .join-form {
-    flex-direction: column;
-  }
-
-  .join-form input,
-  .join-form button {
-    width: 100%;
-  }
-}
-
-/* Footer */
-.footer {
-  background-color: #fff;
-  border-top: 1px solid #e5e5e5;
-  padding: 40px 20px;
-  margin-top: 60px;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.footer-brand {
-  grid-column: 1;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.footer-logo img {
-  height: 40px;
-  width: auto;
-}
-
-.footer-tagline {
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 250px;
-}
-
-.footer-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-column a {
-  color: #666;
-  text-decoration: none;
-  padding: 8px 0;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.footer-column a:hover {
-  color: #ff6b35;
-}
-
-.social-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.social-icon {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.social-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
